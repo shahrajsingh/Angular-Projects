@@ -1,0 +1,338 @@
+.main {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.header {
+
+}
+.app-container{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+.row {
+
+    display: flex;
+
+    flex-grow: 1;
+    width: 100%;
+    margin: 52px 0px 0px 0px;
+
+}
+
+.sidenav-col {
+    position: fixed;
+    width: 58px;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.2s;
+    border-right: 1px solid #eaeaea;
+    background-color: #f4f4f4;
+    float: left;
+    
+}
+
+.nav-items {}
+
+.app-container {
+    width: calc(100% - 60px);
+    transition: 0.2s;
+    margin-left: 58px;
+}
+
+.overlay {
+    height: 100%;
+    width: calc(100% - 150px);
+    margin: 0px 0px 0px 92px;
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.temp {
+    position: absolute;
+}
+
+.header mat-icon {}
+
+.header mat-icon:hover {
+    background-color: white;
+}
+
+mat-toolbar {
+    height: 50px;
+    cursor: pointer;
+}
+
+.nav-list {
+    display: flex;
+    margin-left: -4px;
+}
+
+.list-item:hover .material-icons {
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+
+mat-selection-list {
+    padding: 0px;
+}
+
+mat-list-option {
+    height: 100%;
+}
+
+mat-list-option:hover {
+    background-color: white;
+}
+
+.task-header {
+    padding: 8px 8px 0px 16px;
+}
+h1{
+    margin: 0px;
+}
+.heading p{
+    margin: 0px;
+}
+.task-create {
+    padding: 20px 16px 0px 16px;
+}
+
+.task-list {
+    
+    margin-left: 16px;
+    margin-right: 16px;
+    display: flex;
+
+    flex-grow: 1;
+    background: linear-gradient(
+      180deg,
+      white,
+      white 52px,
+      #e5e5e5 52px,
+      #e5e5e5 52px
+    );
+    background-size: 100% 53px;
+    box-shadow: inset 0 1px 0 0 #e5e5e5;
+}
+app-task-list{
+    flex-grow: 1;
+
+}
+app-header{
+    position: fixed;
+    width: 100%;
+}
+
+.input {
+    height: 52px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .input:focus-within {
+    border-bottom: 1px solid black;
+  }
+  .input form {
+    padding-top: 8px;
+  }
+  .input .b1 {
+    padding-left: 0px;
+    width: 24px;
+    margin-right: 4px;
+  }
+  .input input {
+    width: 80%;
+    outline: none;
+    border: none;
+  }
+  .input .b2 {
+    float: right;
+  }
+  .b1.material-icons::before {
+    content: "add";
+  }
+  .b1:hover.material-icons::before {
+    content: "radio_button_unchecked";
+    font-size: 20px;
+  }
+  
+  @media screen and (min-width: 300px) {
+  
+    .input input{
+      width: 125px;
+    }
+  }
+  @media screen and (min-width: 330px) {
+    .input .b2{
+  
+    }
+    .input input{
+      width: 160px;
+    }
+  }
+  @media screen and (min-width: 361px) {
+    .input input {
+      width: 180px
+    }
+  }
+  @media screen and (min-width: 400px){
+    .input input{
+      width: 210px;
+    }
+  }
+  @media screen and (min-width: 570px){
+    .input input{
+      width: 80%;
+    }
+  }
+  @media screen and (min-width: 760px){
+    .input input{
+      width: 80%;
+    }
+  }
+
+  .tasks {
+    width: 100%;
+}
+
+.pending-list {
+    width: 100%;
+}
+
+.completed-list {
+    width: 100%;
+}
+
+.pending-task {
+    min-height: 52px;
+    width: 100%;
+    display: flex;
+    margin-top: 1px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.completed-task {
+    min-height: 52px;
+    width: 100%;
+    display: flex;
+    margin-top: 1px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.pending-task-item {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: white;
+}
+
+.completed-task-item {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: white;
+}
+
+.pending-task p {
+    width: 99%;
+    overflow: hidden;
+    padding-right: 1rem;
+    margin: 0px 0px 0px 0px;
+    line-height: 52px;
+}
+
+.completed-task p {
+    width: 99%;
+    overflow: hidden;
+    padding-right: 1rem;
+    margin: 0px 0px 0px 0px;
+    line-height: 52px;
+}
+
+
+.leftbtn {
+    padding-top: 12px;
+    width: 32px;
+}
+
+.pending-task .leftbtn::before {
+    content: "panorama_fish_eye";
+}
+
+.completed-task .leftbtn::before {
+    content: "check_circle_outline";
+    cursor: pointer;
+}
+
+.pending-task .leftbtn:hover::before {
+    content: "check_circle_outline";
+}
+
+.rightbtn {
+    padding-top: 12px;
+    width: 32px;
+}
+
+.rightbtn::before {
+    content: "star_outline";
+}
+
+.rightbtn:hover {
+    font-weight: 600;
+}
+
+.rightbtn-imp {
+    padding-top: 12px;
+    width: 32px;
+}
+
+.rightbtn-imp::before {
+    content: "star";
+}
+.completed-header{
+    width: 100%;
+    display: flex;
+    height: 53px;
+    
+}
+.icon-holder{
+    width: 28px;
+    cursor: pointer;
+}
+.completed-header mat-icon{
+    transition: 0.1s;
+    cursor: pointer;
+    padding-top: 12px;
+}
+.completed-header h2{
+    line-height: 52px;
+}
+
+.pending-task-item:hover{
+    background-color: #e5e5e5;
+    cursor: pointer;
+}
+.completed-task-item:hover{
+    background-color: #e5e5e5;
+    cursor: pointer;
+}
+::ng-deep.mat-menu-panel {
+    max-width: none !important;
+  }
+.delete{
+    font-size: 16px;
+    color: black;
+    
+}
+.del-ico{
+    color: black;
+}
+.delete:hover{
+    color: white;
+    background-color: red;
+}
+.delete:hover .del-ico{
+    color: white;
+}
