@@ -1,1 +1,150 @@
-<p>signup works!</p>
+<div class="signup-container">
+  <div class="signup">
+    <div class="header">
+      <p>Sign Up</p>
+      <h3>Please fill in this form to create an account.</h3>
+    </div>
+    <mat-card class="form">
+      <form #signupForm="ngForm" (submit)="Signup(signupForm)">
+        <div class="profile-img">
+          <div class="imgprev">
+            <img [src]="imagePreview" />
+          </div>
+          <button
+            class="icon-btn"
+            (click)="filePicker.click()"
+            type="button"
+            mat-mini-fab
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+          <input
+            class="filepick"
+            type="file"
+            #filePicker
+            (change)="onImagePicked($event)"
+          />
+        </div>
+        <mat-divider></mat-divider>
+
+        <h2>Personal Details</h2>
+        <mat-form-field class="lft" appearance="outline">
+          <mat-label>First Name:</mat-label>
+          <input
+            required
+            minlength="2"
+            ngModel
+            #FirstName="ngModel"
+            type="text"
+            matInput
+            name="FirstName"
+            placeholder="e.g:- John"
+            autocomplete="off"
+          />
+          <mat-error *ngIf="FirstName.invalid">Name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name:</mat-label>
+          <input
+            required
+            minlength="2"
+            ngModel
+            #LastName="ngModel"
+            type="text"
+            matInput
+            name="LastName"
+            placeholder="e.g:- Doe"
+            autocomplete="off"
+          />
+          <mat-error *ngIf="LastName.invalid">Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="lft" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            name="Email"
+            ngModel
+            #email="ngModel"
+            type="email"
+            required
+          />
+          <mat-error *ngIf="email.invalid">email is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Date of Birth</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker1"
+            name="DoB"
+            #Date="ngModel"
+            ngModel
+            required
+            placeholder="dd/mm/yyyy"
+            autocomplete="off"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker1"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label>Address</mat-label>
+          <input
+            type="text"
+            required
+            ngModel
+            #Address="ngModel"
+            name="Address"
+            placeholder="e.g:- 123 Main Street, New York, NY 10030"
+            matInput
+            minlength="8"
+          />
+          <mat-error *ngIf="Address.invalid">Address is required</mat-error>
+        </mat-form-field>
+        <mat-label>Gender: </mat-label>
+        <mat-radio-group required ngModel name="Gender">
+          <mat-radio-button value="male">Male &nbsp;</mat-radio-button>
+          <mat-radio-button value="female">Female &nbsp;</mat-radio-button>
+          <mat-radio-button value="other">Other &nbsp;</mat-radio-button>
+        </mat-radio-group>
+        <mat-divider style="margin-top: 8px"></mat-divider>
+        <br />
+        <br />
+        <h2>Password</h2>
+        <mat-form-field class="lft" appearance="outline">
+          <mat-label>Choose Password</mat-label>
+          <input
+            type="password"
+            required
+            matInput
+            name="Password"
+            ngModel
+            #pass="ngModel"
+            minlength="8"
+            placeholder="Minium 8 characters"
+            autocomplete="off"
+          />
+          <mat-error *ngIf="pass.invalid">Password is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input
+            type="Password"
+            required
+            matInput
+            name="Cpass"
+            ngModel
+            #cpass="ngModel"
+            minlength="8"
+            placeholder="Minium 8 characters"
+            autocomplete="off"
+          />
+          <mat-error *ngIf="cpass.invalid">Password is required</mat-error>
+        </mat-form-field>
+        <button class="btn" mat-raised-button color="primary">Sign Up</button>
+      </form>
+    </mat-card>
+  </div>
+</div>

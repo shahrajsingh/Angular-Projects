@@ -1,18 +1,38 @@
-<div class="main" style="background-color: rgb({{x}},{{y}},{{z}});">
-    
-    <div class="child" style="background-color: rgb({{a}},{{b}},{{c}});margin-top: 250px">
-        <div class="child-pic">
-
-        </div>
+<mat-sidenav-container
+  style="
+    width: 100%;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-grow: 1;
+    flex-flow: column;
+  "
+>
+  <mat-sidenav #sidenav mode="over" style="position: fixed; height: 100%"
+    ><button mat-icon-button class="tempr" (click)="sidenav.toggle()">
+      <mat-icon class="tempr-ico">close</mat-icon>
+    </button>
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content class="side-nav-content">
+    <div class="header-wrapper">
+      <mat-toolbar class="header" color="primary">
+        <button
+          mat-icon-button
+          class="header-menu-button"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon class="header-menu-button-icon">menu</mat-icon>
+        </button>
+        <app-header></app-header>
+      </mat-toolbar>
+      <mat-toolbar color="primary" class="mobile-search-bar"
+        ><app-search style="width: 80%"></app-search
+        ><button class="mobile-search-button">Search</button></mat-toolbar
+      >
     </div>
-    <div class="child" style="background-color: rgb({{a}},{{b}},{{c}});margin-top: 150px">
-        <div class="child-pic-2">
 
-        </div>
+    <div class="app-container">
+      <router-outlet class="row2"></router-outlet>
     </div>
-    <div class="child" style="background-color: rgb({{a}},{{b}},{{c}});margin-top: 50px">
-        <div class="child-pic-3">
-
-        </div>
-    </div>
-</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

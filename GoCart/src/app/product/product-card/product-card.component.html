@@ -1,0 +1,15 @@
+<div class="card">
+  <img
+    [src]="product.image"
+    alt="{{ product.name }}"
+    style="width: 100%; height: 200px"
+  />
+  <div class="price-rating">
+    <p class="h1">{{ product.name }}</p>
+    <app-star-rating
+      [rating]="product.rating"
+      [align]="'center'"
+    ></app-star-rating>
+  </div>
+  <p class="price">${{ product.price }}</p>
+</div>

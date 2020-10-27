@@ -1,0 +1,25 @@
+.bill-panel {
+  padding: 0rem 1rem 0rem 1rem;
+}
+.bill-card {
+}
+.total {
+  display: flex;
+  font-size: 22px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 40px;
+  padding: 8px 0px 8px 0px;
+}
+.total-details {
+  width: 60%;
+  text-align: left;
+}
+.total-amount {
+  flex-grow: 1;
+  text-align: right;
+}
+@media screen and (max-width: 1016px) {
+  .bill-panel {
+    padding: 1rem 0rem 0rem 0rem;
+  }
+}

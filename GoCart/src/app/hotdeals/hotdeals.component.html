@@ -1,0 +1,53 @@
+<mat-card class="discounts">
+  <mat-card-header>
+    <mat-card-title>Hot Deals of The Day</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container>
+      <button class="btn prev" (click)="scrollleft()" color="primary">
+        <mat-icon>navigate_before</mat-icon>
+      </button>
+      <button class="btn next" (click)="scrollright()" color="primary">
+        <mat-icon>navigate_next</mat-icon>
+      </button>
+    </ng-container>
+
+    <div class="image-container-wraper" id="image-container-wraper">
+      <div class="image-container" *ngFor="let i of hotdeals">
+        <div class="image">
+          <img [src]="i.img" />
+        </div>
+        <div class="Price">
+          <p class="price-para">
+            <del>Rs {{ i.price }}</del>
+            <a class="price-para-a">&nbsp; Rs {{ i.discountedPrice }}</a>
+          </p>
+        </div>
+      </div>
+      <!--demo-->
+      <div class="image-container" *ngFor="let i of hotdeals">
+        <div class="image">
+          <img [src]="i.img" />
+        </div>
+        <div class="Price">
+          <p class="price-para">
+            <del>Rs {{ i.price }}</del>
+            <a class="price-para-a">&nbsp; Rs {{ i.discountedPrice }}</a>
+          </p>
+        </div>
+      </div>
+      <div class="image-container" *ngFor="let i of hotdeals">
+        <div class="image">
+          <img [src]="i.img" />
+        </div>
+        <div class="Price">
+          <p class="price-para">
+            <del>Rs {{ i.price }}</del>
+            <a class="price-para-a">&nbsp; Rs {{ i.discountedPrice }}</a>
+          </p>
+        </div>
+      </div>
+      <!--demo end-->
+    </div>
+  </mat-card-content>
+</mat-card>

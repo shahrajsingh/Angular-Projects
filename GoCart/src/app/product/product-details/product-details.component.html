@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="images">
+    <img class="image" [src]="product.image" />
+  </div>
+  <mat-divider vertical="true"></mat-divider>
+
+  <div class="product-details">
+    <h1>{{ product.name }}</h1>
+    <app-star-rating
+      [rating]="product.rating"
+      [align]="'left'"
+    ></app-star-rating>
+
+    <mat-divider></mat-divider>
+    <div style="margin: 8px 0px 8px 0px">
+      <div class="price">
+        <div class="left mrp">M.R.P:</div>
+        <div class="right mrp"><del>$1234</del></div>
+      </div>
+      <div class="price">
+        <div class="left Price">Price:</div>
+        <div class="right Price">$1234</div>
+      </div>
+      <div class="price">
+        <div class="left discount">You Save:</div>
+        <div class="right discount">$0</div>
+      </div>
+      <div class="price">
+        <div class="left seller">Sold by:</div>
+        <div class="right seller">{{ product.sellerName }}</div>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="description">
+      <p>Product Description</p>
+      {{ product.description }}
+    </div>
+    <mat-divider style="margin-bottom: 8px"></mat-divider>
+  </div>
+  <mat-divider style="margin-right: 8px" vertical="true"></mat-divider>
+
+  <div class="options">
+    <mat-card>
+      <p>
+        Quantity: <input type=" number" [(ngModel)]="quantity" />
+        <a style="font-size: 16px; color: rgb(145, 127, 127)">
+          /max-quantity:</a
+        >
+      </p>
+      <button class="btn" mat-raised-button color="primary">
+        Add to Cart <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+      <button class="btn" mat-raised-button color="accent">
+        Buy Now <mat-icon>payment</mat-icon>
+      </button>
+      <mat-divider style="margin: 4px 0px 0px 0px"> </mat-divider>
+      <br /><br />
+      <button class="btn" mat-button (click)="favorite()">
+        <a id="atw">Wishlist </a>
+        <mat-icon id="favorite">favorite_border</mat-icon>
+      </button>
+    </mat-card>
+  </div>
+</div>

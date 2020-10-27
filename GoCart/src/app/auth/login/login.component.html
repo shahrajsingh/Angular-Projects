@@ -1,1 +1,58 @@
-<p>login works!</p>
+<!--
+
+-->
+
+<div class="brand">
+  <h1 class="brand-name">GoCart</h1>
+</div>
+<div class="logincontents">
+  <div class="loginbanner"><h2 class="heading">Login</h2></div>
+  <div class="logincredentials">
+    <form #loginForm="ngForm" name="loginForm" (submit)="Login(loginForm)">
+      <mat-form-field appearance="outline" class="formfield">
+        <mat-label>Username or Email</mat-label>
+        <input
+          matInput
+          name="username"
+          #username="ngModel"
+          ngModel
+          required
+          minlength="3"
+          type="text"
+          placeholder="e.g:- JohnDoe@email.com"
+          autocomplete="off"
+        />
+        <mat-error *ngIf="username.invalid">Username is Required</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="formfield">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          name="password"
+          #Password="ngModel"
+          ngModel
+          type="password"
+          required
+          minlength="3"
+          placeholder="********"
+        />
+        <mat-error *ngIf="Password.invalid">Password is Required</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="btn" type="submit">
+        Login
+      </button>
+      <br /><br />
+      <mat-divider></mat-divider>
+      <h3 class="subheading">Don't have a GoCart account?</h3>
+      <button
+        mat-raised-button
+        color="accent"
+        class="btn"
+        routerLink="/signup"
+        (click)="signup()"
+      >
+        SignUp
+      </button>
+    </form>
+  </div>
+</div>

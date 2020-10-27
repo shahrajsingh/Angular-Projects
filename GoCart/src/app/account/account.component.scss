@@ -1,0 +1,55 @@
+.account-container {
+  display: flex;
+  padding: 1rem 5rem 1rem 5rem;
+}
+.left {
+  width: 30%;
+
+  margin-right: 8px;
+}
+.avatar {
+  height: 60px;
+  width: 60px;
+}
+.list {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+.right {
+  flex-grow: 1;
+}
+.personalinfo {
+  margin-top: 8px;
+}
+mat-divider {
+  margin: 4px 0px 4px 0px;
+}
+@media screen and (max-width: 1280px) {
+  .account-container {
+    padding: 1rem 2rem 1rem 2rem;
+  }
+}
+@media screen and(max-width: 800px) {
+  .account-container {
+    padding: 1rem;
+  }
+  .left {
+    width: 35%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .left {
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 8px;
+  }
+  .right {
+    width: 100%;
+    padding: 0px;
+  }
+  .account-container {
+    display: block;
+    padding: 0px;
+  }
+}

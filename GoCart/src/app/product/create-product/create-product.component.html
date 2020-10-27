@@ -1,0 +1,274 @@
+<div class="product-create-container">
+  <mat-card>
+    <form [formGroup]="ProductForm">
+      <mat-horizontal-stepper linear class="horizontal">
+        <mat-step errorMessage="Name is required.">
+          <ng-template matStepLabel>Select Category</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Product Category</mat-label>
+            <mat-select formControlName="Category" required>
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let cat of categories" [value]="cat">
+                {{ cat }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="ProductForm.get('Category').invalid"
+              >Select a Category</mat-error
+            >
+          </mat-form-field>
+          <div
+            matTooltip="Please Select Category"
+            matTooltipPosition="below"
+            [matTooltipDisabled]="!ProductForm.get('Category').invalid"
+          >
+            <button
+              mat-button
+              matStepperNext
+              [disabled]="ProductForm.get('Category').invalid"
+              type="button"
+            >
+              Next
+            </button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Product Name and Description</ng-template>
+          <mat-form-field appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="e.g:- Phone"
+              required
+              formControlName="ProductName"
+              autocomplete="off"
+            />
+            <mat-error *ngIf="ProductForm.get('ProductName').invalid"
+              >Product Name is Required</mat-error
+            >
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              placeholder="e.g Luxry Phone"
+              autocomplete="off"
+            />
+            <mat-error *ngIf="ProductForm.get('Description').invalid"
+              >Description is required</mat-error
+            >
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious type="button">Back</button>
+            <button
+              mat-button
+              matStepperNext
+              type="button"
+              [disabled]="ProductForm.get('ProductName').invalid"
+            >
+              Next
+            </button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Add a Picture</ng-template>
+          <div>
+            <button
+              mat-stroked-button
+              type="button"
+              (click)="filePicker.click()"
+            >
+              Pick Image
+            </button>
+            <input type="file" #filePicker (change)="onImagePicked($event)" />
+          </div>
+          <div
+            class="image-preview"
+            *ngIf="
+              imagePreview !== '' &&
+              imagePreview &&
+              ProductForm.get('image').valid
+            "
+          >
+            <img [src]="imagePreview" [alt]="ProductForm.value.ProductName" />
+          </div>
+          <div>
+            <button mat-button matStepperPrevious type="button">Back</button>
+            <button
+              mat-button
+              matStepperNext
+              type="button"
+              [disabled]="ProductForm.get('image').invalid"
+            >
+              Next
+            </button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Pricing</ng-template>
+          <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input
+              matInput
+              type="number"
+              required
+              formControlName="Price"
+              autocomplete="off"
+            />
+            <mat-error *ngIf="ProductForm.get('Price').invalid"
+              >Price is required</mat-error
+            >
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious type="button">Back</button>
+            <button
+              mat-raised-button
+              color="primary"
+              matStepperNext
+              type="button"
+              [disabled]="ProductForm.get('Price').invalid"
+            >
+              List Product
+            </button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+      <mat-vertical-stepper class="vertical" linear>
+        <mat-step errorMessage="Name is required.">
+          <ng-template matStepLabel>Select Category</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Product Category</mat-label>
+            <mat-select formControlName="Category" required>
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let cat of categories" [value]="cat">
+                {{ cat }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="ProductForm.get('Category').invalid"
+              >Select a Category</mat-error
+            >
+          </mat-form-field>
+          <div
+            matTooltip="Please Select Category"
+            matTooltipPosition="below"
+            [matTooltipDisabled]="!ProductForm.get('Category').invalid"
+          >
+            <button
+              mat-button
+              matStepperNext
+              [disabled]="ProductForm.get('Category').invalid"
+              type="button"
+            >
+              Next
+            </button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Product Name and Description</ng-template>
+          <mat-form-field appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="e.g:- Phone"
+              required
+              formControlName="ProductName"
+              autocomplete="off"
+            />
+            <mat-error *ngIf="ProductForm.get('ProductName').invalid"
+              >Product Name is Required</mat-error
+            >
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              placeholder="e.g Luxry Phone"
+              autocomplete="off"
+            />
+            <mat-error *ngIf="ProductForm.get('Description').invalid"
+              >Description is required</mat-error
+            >
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious type="button">Back</button>
+            <button
+              mat-button
+              matStepperNext
+              type="button"
+              [disabled]="ProductForm.get('ProductName').invalid"
+            >
+              Next
+            </button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Add a Picture</ng-template>
+          <div>
+            <button
+              mat-stroked-button
+              type="button"
+              (click)="filePicker.click()"
+            >
+              Pick Image
+            </button>
+            <input type="file" #filePicker (change)="onImagePicked($event)" />
+          </div>
+          <div
+            class="image-preview"
+            *ngIf="
+              imagePreview !== '' &&
+              imagePreview &&
+              ProductForm.get('image').valid
+            "
+          >
+            <img [src]="imagePreview" [alt]="ProductForm.value.ProductName" />
+          </div>
+          <div>
+            <button mat-button matStepperPrevious type="button">Back</button>
+            <button
+              mat-button
+              matStepperNext
+              type="button"
+              [disabled]="ProductForm.get('image').invalid"
+            >
+              Next
+            </button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Pricing</ng-template>
+          <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input
+              matInput
+              type="number"
+              required
+              formControlName="Price"
+              autocomplete="off"
+            />
+            <mat-error *ngIf="ProductForm.get('Price').invalid"
+              >Price is required</mat-error
+            >
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious type="button">Back</button>
+            <button
+              mat-raised-button
+              color="primary"
+              matStepperNext
+              type="button"
+              [disabled]="ProductForm.get('Price').invalid"
+            >
+              List Product
+            </button>
+          </div>
+        </mat-step>
+      </mat-vertical-stepper>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,48 @@
+.card {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  height: 100%;
+}
+.card:hover {
+  border: 0px;
+}
+img {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.price-rating {
+  position: absolute;
+  left: 0;
+  justify-content: center;
+  width: 100%;
+  top: 204px;
+  text-align: center;
+}
+.price {
+  font-size: 22px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black;
+  color: white;
+  line-height: 43px;
+  width: 100%;
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+.h1 {
+  font-family: sans-serif;
+  font-size: 22px;
+  line-height: 22px;
+}
+@media screen and (max-width: 600px) {
+  .h1 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}

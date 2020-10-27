@@ -1,0 +1,55 @@
+<div class="banner">
+  <app-carousal [slides]="slides"></app-carousal>
+</div>
+<div class="option-grid">
+  <!--langing page cards start-->
+  <mat-grid-list
+    [cols]="colSize"
+    gutterSize="0.5rem"
+    rowHeight="100%"
+    class="parent-grid"
+  >
+    <mat-grid-tile class="parent-grid-tile recentProducts" *ngIf="colSize >= 1"
+      ><mat-card class="option-card"
+        ><mat-card-title style="margin-top: 8px"
+          ><mat-card-header>Continue Shopping</mat-card-header></mat-card-title
+        ><app-card [arr]="recentProducts"></app-card></mat-card
+    ></mat-grid-tile>
+    <mat-grid-tile class="parent-grid-tile" *ngIf="colSize >= 2"
+      ><mat-card class="option-card"
+        ><mat-card-title style="margin-top: 8px"
+          ><mat-card-header>Shop By Cateogry</mat-card-header></mat-card-title
+        ><app-card [arr]="producbyCateogry"></app-card></mat-card
+    ></mat-grid-tile>
+    <mat-grid-tile class="parent-grid-tile" *ngIf="colSize >= 3"
+      ><mat-card class="option-card"
+        ><mat-card-title style="margin-top: 8px"
+          ><mat-card-header>Shop by Discounts</mat-card-header></mat-card-title
+        ><app-card [arr]="shopByDiscount"></app-card></mat-card
+    ></mat-grid-tile>
+    <mat-grid-tile class="parent-grid-tile" *ngIf="colSize >= 4"
+      ><mat-card class="option-card"
+        ><mat-card-title style="margin-top: 8px"
+          ><mat-card-header>Account Details</mat-card-header></mat-card-title
+        >
+        <mat-list>
+          <mat-list-item>
+            <button class="list-btn" mat-raised-button color="primary">
+              Sign in to your account
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button class="list-btn" mat-raised-button color="primary">
+              Account Settings
+            </button>
+          </mat-list-item>
+        </mat-list>
+      </mat-card></mat-grid-tile
+    >
+  </mat-grid-list>
+  <!--landing page cards end-->
+</div>
+
+<div class="deals">
+  <app-hotdeals [hotdeals]="DealsofTheDay"></app-hotdeals>
+</div>

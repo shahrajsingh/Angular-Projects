@@ -1,0 +1,85 @@
+.signup {
+  margin: auto;
+  max-width: 600px;
+  padding: 0px;
+}
+
+.header {
+  height: 64px;
+  background-color: #ffc107;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  padding: 15px 15px 20px 15px;
+}
+.header p {
+  font-weight: 700;
+  text-shadow: 1px 0px black;
+  font-size: 26px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.header h3 {
+  color: black;
+  font-weight: 400;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.form {
+  margin-top: -25px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+mat-form-field {
+  width: 49.2%;
+}
+.lft {
+  margin-right: 8px;
+}
+.btn {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+.profile-img {
+  height: 150px;
+  width: 100%;
+  position: relative;
+}
+.imgprev {
+  width: 180px;
+  margin: auto;
+  height: 135px;
+}
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+}
+.icon-btn {
+  position: absolute;
+  right: 35%;
+  bottom: 10%;
+}
+.filepick {
+  visibility: hidden;
+}
+@media screen and (max-width: 600px) {
+  mat-form-field {
+    width: 100%;
+  }
+  .left {
+    margin: 0px;
+  }
+  .form {
+    margin-top: -25px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+  }
+  .icon-btn {
+    position: absolute;
+    right: 25%;
+    bottom: 10%;
+  }
+}

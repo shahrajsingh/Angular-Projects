@@ -1,0 +1,30 @@
+.cart-container {
+  display: flex;
+  width: 100%;
+}
+.place-order {
+  display: none;
+}
+app-order-summary {
+  width: 60%;
+}
+app-price-details {
+  width: 500px;
+}
+@media screen and (max-width: 1016px) {
+  .cart-container {
+    display: block;
+  }
+  app-order-summary {
+    width: 100%;
+  }
+  app-price-details {
+    width: 100%;
+  }
+  .place-order {
+    display: block;
+    width: 100%;
+    border-radius: 0px;
+    margin: 8px 0px 16px 0px;
+  }
+}

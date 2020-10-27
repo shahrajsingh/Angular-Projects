@@ -1,0 +1,19 @@
+<form
+  name="searchField"
+  #searchField="ngForm"
+  (submit)="searchQuery(searchField)"
+>
+  <div class="searchWrapper">
+    <input
+      type="text"
+      ngModel
+      #Query="ngModel"
+      required
+      minlength="3"
+      name="Query"
+    />
+    <button class="search-btn" type="submit" mat-icon-button>
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+</form>

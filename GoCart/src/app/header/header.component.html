@@ -1,20 +1,46 @@
-<mat-toolbar class="toolbar">
-    <button mat-icon-button class="menu-icon"(click)="inputSideNav.toggle()">
-      <mat-icon>menu</mat-icon>
+<div class="wrapper">
+  <div class="brand-name" routerLink="/">GoCart</div>
+  <div class="search-bar"><app-search></app-search></div>
+  <div class="misc">
+    <button mat-button class="btn" *ngIf="isAuthenticated" (click)="logOut()">
+      Logout
     </button>
-    <span class="brand">GoCart</span>
-    <span class="spacer">
-        <form>
-            <div class="search-wrapper">
-                <input class="search-input">
-                <button mat-icon-button class="search-icon">
-                    <mat-icon>search</mat-icon>
-                  </button>
-            </div>
-        </form>
-    </span>
-    <button mat-icon-button class="account-icon" >
-      <mat-icon>account_box</mat-icon>
+    <button
+      mat-button
+      class="btn"
+      *ngIf="!isAuthenticated"
+      (click)="openDialog()"
+    >
+      Login
     </button>
-    
-  </mat-toolbar>
+    <div class="sell-btn">
+      <button
+        mat-button
+        class="btn"
+        *ngIf="isAuthenticated"
+        routerLink="sellProduct"
+      >
+        Sell
+      </button>
+      <button
+        mat-button
+        style="color: rgb(114, 105, 105)"
+        class="btn"
+        *ngIf="!isAuthenticated"
+        (click)="openSnackBar()"
+      >
+        Sell
+      </button>
+    </div>
+
+    <button mat-button class="btn cart" routerLink="/viewCart">
+      <mat-icon
+        style="font-size: 28px"
+        matBadge="15"
+        matBadgeColor="warn"
+        matBadgeSize="small"
+        >shopping_cart</mat-icon
+      ><a class="temp">&nbsp;Cart</a>
+    </button>
+  </div>
+</div>

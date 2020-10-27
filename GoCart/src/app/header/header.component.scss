@@ -1,0 +1,69 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+}
+.brand-name {
+  margin-top: 2px;
+  width: 10%;
+  color: white;
+  font-size: 28px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  text-shadow: 2px 2px rgba($color: #000000, $alpha: 0.4);
+  font-weight: 700;
+  margin-left: 1rem;
+}
+.search-bar {
+  display: flex;
+  width: 70%;
+}
+app-search {
+  width: 100%;
+  margin: 0px 8px 0px 8px;
+}
+.misc {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  font-size: 18px;
+  font-weight: 600;
+  width: 33%;
+  border: 2px solid #ffc107;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 4px;
+  text-shadow: 1px 1px rgba($color: #000000, $alpha: 0.2);
+}
+.btn:hover {
+  border: 2px solid white;
+}
+mat-icon {
+  padding-bottom: 4px;
+}
+@media screen and(max-width: 393px) {
+  .temp {
+    display: none;
+  }
+}
+@media screen and (max-width: 765px) {
+  .search-bar {
+    display: none;
+  }
+  .brand-name {
+    flex-grow: 1;
+    margin-left: 8px;
+  }
+  .misc {
+    flex-grow: 0;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .cart:hover {
+    border: none;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+}

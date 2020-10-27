@@ -1,0 +1,38 @@
+<div class="bill-panel">
+  <mat-card class="bill-card"
+    ><mat-card-header
+      ><mat-card-title>Price Details</mat-card-title></mat-card-header
+    ><mat-divider></mat-divider>
+
+    <div class="total">
+      <div class="total-details">
+        Price({{ TotalItems }} items)
+        <br />
+        Discount
+        <br />
+        Delivery Charges
+      </div>
+      <mat-divider vertical="true"></mat-divider>
+      <div class="total-amount">
+        ${{ cartTotal }}
+        <br />
+        -${{ discount }}<br />
+        {{ deliveryCharges }}
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="total">
+      <div class="total-details">Total Amount</div>
+      <div class="total-amount">${{ cartTotal }}</div>
+    </div>
+    <mat-divider></mat-divider>
+    <button
+      mat-raised-button
+      color="primary"
+      class="order-button"
+      style="width: 100%; border-radius: 0px; margin-top: 1rem"
+    >
+      Place order
+    </button>
+  </mat-card>
+</div>

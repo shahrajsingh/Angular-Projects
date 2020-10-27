@@ -1,0 +1,15 @@
+.order-details-container {
+  display: flex;
+}
+img {
+  height: 96px;
+  width: 96px;
+}
+.order-details {
+  flex-grow: 1;
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 24px;
+}

@@ -1,0 +1,13 @@
+<div id="rating-container" style="justify-content: {{ align }};">
+  <mat-icon id="1" class="rate" *ngIf="rating >= 1">star</mat-icon>
+  <mat-icon id="2" class="rate" *ngIf="rating >= 2">star</mat-icon>
+  <mat-icon id="3" class="rate" *ngIf="rating >= 3">star</mat-icon>
+  <mat-icon id="4" class="rate" *ngIf="rating >= 4">star</mat-icon>
+  <mat-icon id="5" class="rate" *ngIf="rating >= 5">star</mat-icon>
+  <mat-icon id="1" *ngIf="rating < 5">star_outline</mat-icon>
+  <mat-icon id="2" *ngIf="rating < 4">star_outline</mat-icon>
+  <mat-icon id="3" *ngIf="rating < 3">star_outline</mat-icon>
+  <mat-icon id="4" *ngIf="rating < 2">star_outline</mat-icon>
+
+  &nbsp;<a>{{ rating }}</a>
+</div>

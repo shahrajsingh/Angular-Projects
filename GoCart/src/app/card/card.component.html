@@ -1,0 +1,30 @@
+<div class="wrapper" *ngIf="arr.length > 0">
+  <div class="row" *ngIf="arr.length >= 1">
+    <div class="col">
+      <div class="img-container" *ngIf="arr.length >= 1">
+        <img src="{{ arr[0].img }}" alt="{{ arr[0].name }}" />
+      </div>
+      <div class="productName">{{ arr[0].name }}</div>
+    </div>
+    <div class="col">
+      <div class="img-container" *ngIf="arr.length >= 2">
+        <img src="{{ arr[1].img }}" alt="{{ arr[1].name }}" />
+      </div>
+      <div class="productName">{{ arr[1].name }}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="img-container" *ngIf="arr.length >= 3">
+        <img src="{{ arr[2].img }}" alt="{{ arr[2].name }}" />
+      </div>
+      <div class="productName">{{ arr[2].name }}</div>
+    </div>
+    <div class="col">
+      <div class="img-container" *ngIf="arr.length >= 4">
+        <img src="{{ arr[3].img }}" alt="{{ arr[3].name }}" />
+      </div>
+      <div class="productName">{{ arr[3].name }}</div>
+    </div>
+  </div>
+</div>

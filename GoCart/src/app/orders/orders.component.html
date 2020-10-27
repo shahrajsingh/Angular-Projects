@@ -1,0 +1,66 @@
+<div class="orders-container">
+  <div class="orders-list">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title> Orders </mat-card-title>
+      </mat-card-header>
+      <mat-accordion multi="true">
+        <mat-expansion-panel
+          *ngFor="let i of DealsofTheDay"
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title *ngIf="!panelOpenState">
+              {{ i.name }}
+            </mat-panel-title>
+
+            <mat-panel-description>
+              Status: {{ i.status }}
+            </mat-panel-description>
+            <mat-panel-description>
+              Delivery Date: {{ i.deliveryDate }}
+            </mat-panel-description>
+            <mat-panel-description> ${{ i.price }} </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="orderDetails-container">
+            <div class="image"><img [src]="i.img" /></div>
+            <div class="order-details">
+              <mat-panel-description *ngIf="panelOpenState">
+                {{ i.name }}
+              </mat-panel-description>
+              <div class="progress">
+                <mat-progress-bar
+                  class="progress-bar"
+                  mode="determinate"
+                  [value]="i.progress"
+                ></mat-progress-bar>
+                <a class="progress-status">{{ i.status }}</a>
+              </div>
+            </div>
+            <div class="address"></div>
+          </div>
+          <mat-action-row>
+            <button mat-button>Write a review</button>
+            <button
+              mat-raised-button
+              color="primary"
+              *ngIf="i.status == 'delivered'"
+            >
+              Return
+            </button>
+            <button
+              mat-button
+              color="primary"
+              [disabled]="i.cancel"
+              *ngIf="i.status != 'delivered'"
+            >
+              Cancel
+            </button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card>
+  </div>
+</div>
+<app-orders-mobile [arr]="DealsofTheDay"></app-orders-mobile>

@@ -1,0 +1,20 @@
+<div class="main" style="display: flex; flex-flow: column; height: 100%;">
+  <div class="header" style="height: 64px;">
+    <app-header style=""></app-header>
+  </div>
+  <div
+    class="content"
+    style="
+      flex-grow: 1;
+      border: 2px solid green;
+      display: flex;
+      flex-flow: column;
+    "
+  >
+    <mat-sidenav-container style="flex-grow: 1;">
+      <mat-sidenav-content style="border: 1px solid red;">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>
